@@ -46,6 +46,8 @@ module.exports = {
   //this is what enables users to leave off the extension when importing
     resolve: {
         extensions: ['.mjs', '.js', '.svelte'],
+        mainFields: ['svelte', 'browser', 'module', 'main'],
+        conditionNames: ['svelte', 'browser', 'import']
     },
     plugins: [
     //Allows to create an index.html in our build folder 
@@ -64,7 +66,4 @@ module.exports = {
         static: path.resolve(__dirname, 'dist'),
         hot: true,
     },
-    resolve: {
-        conditionNames: ['svelte']
-    }
 };
